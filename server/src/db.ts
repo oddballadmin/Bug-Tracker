@@ -1,18 +1,29 @@
-const mysql = require('mysql2');
+import mysql, { ConnectionOptions } from "mysql2/promise";
+import dotenv from "dotenv";
+import e from "express";
+dotenv.config();
 
-// create the connection to database
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'test',
+export const pool = mysql.createPool({
+	host: process.env.HOST || "localhost",
+	user: process.env.USER || "root",
+	database: process.env.DB || "bugtracker",
+	password: process.env.PASSWORD || "",
+	waitForConnections: true,
+	connectionLimit: 10,
+	queueLimit: 0,
+	maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
+	idleTimeout: 60000, // idle connections timeout, in milliseconds, the default value 60000
+	enableKeepAlive: true,
+	keepAliveInitialDelay: 0,
 });
 
-// execute will internally call prepare and query
-connection.execute(
-  'SELECT * FROM `table` WHERE `name` = ? AND `age` > ?',
-  ['Rick C-137', 53],
-  function (err: string, results: [], fields: []) {
-    console.log(results); // results contains rows returned by server
-    console.log(fields); // fields contains extra meta data about results, if available
-  }
-);
+export const connectToDatabase = async () => {
+	try {
+		const connection = await pool.getConnection();
+		console.log("Connected to the database successfully.");
+		connection.release();
+	} catch (error) {
+		console.error("Error connecting to the database:", error);
+		throw error;
+	}
+}

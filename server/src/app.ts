@@ -1,19 +1,14 @@
-const express = require('express');
+import express from 'express';
+import { connectToDatabase } from './db';
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+const connectionToDatabase = connectToDatabase();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-// Simple route for testing
 
 app.listen(PORT, () => {
-
-    console.log(`Server is running on port ${PORT}`);
-
-
+  console.log(`🚀 Server is running on port ${PORT}`);
+  
 });
-
-
-
