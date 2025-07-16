@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es2020",          // Output ES2020-compatible JavaScript
+      "module": "commonjs",        // Use Node-style modules (require/export)
+      "outDir": "dist",            // Compiled JS goes in this folder
+      "rootDir": "src",            // TS source files live here
+      "strict": true,              // Enable all strict type-checking (very good!)
+      "esModuleInterop": true,     // Allows default imports from CommonJS modules
+      "skipLibCheck": true         // Skip type checks on node_modules to speed up
+    },
+    "include": ["src"]
+  }
