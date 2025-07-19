@@ -1,6 +1,5 @@
 import mysql, { ConnectionOptions } from "mysql2/promise";
 import dotenv from "dotenv";
-import e from "express";
 dotenv.config();
 
 export const pool = mysql.createPool({
