@@ -15,7 +15,11 @@ body {
 	color: #f0f0f0;
 
 }
-
+.app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
 section{
     max-width: 100vw;
 	padding: 0 2rem;
@@ -31,4 +35,39 @@ h1 {
 	font-weight: 800;
 	text-align: center;
 	margin: 2rem 0;
+}
+.info{
+	text-align: center;
+}
+.info h2{
+	border-radius: 50%;
+	height: 100%;
+	width: 50%;
+	padding-block: 2rem;
+	border: #f0f0f0 2.5px solid;
+	margin: 0 auto;
+}
+.header-container{
+	flex: 1;
+}
+.app-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 1rem;
+	position: relative;
+}
+.app-content button {
+	margin-top: 5rem;
+}
+
+button{
+    flex: 1;
+    white-space: nowrap;
+    padding: 1em 3em;
+    background-color: transparent;
+    border: 1px solid #f0f0f0;
+    color: #f0f0f0;
+    cursor: pointer;
 }

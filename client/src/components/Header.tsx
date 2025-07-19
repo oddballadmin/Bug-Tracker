@@ -20,8 +20,12 @@ function Header() {
 }
 const styles = {
     header: {
-        backgroundColor: '#282c34',
+        // backgroundColor: '#282c34',
+        backgroundColor: 'rgba(28, 39, 63, 1)',
         color: 'white',
+        justifyContent: 'space-around',
+        width: '100%',
+        
     },
     container: {
         display: 'flex',
