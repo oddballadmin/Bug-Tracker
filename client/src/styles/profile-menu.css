@@ -1,0 +1,21 @@
+.profile-menu {
+  position: relative;
+  display: inline-block;
+
+}
+.button-group-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  margin-left: 1rem;
+}
+.button-group-auth button{
+    flex: 1;
+    white-space: nowrap;
+    padding: 1em 3em;
+    background-color: transparent;
+    border: 1px solid #f0f0f0;
+    color: #f0f0f0;
+    cursor: pointer;
+}
