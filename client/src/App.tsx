@@ -2,6 +2,12 @@ import Header from "./components/Header";
 import AddBugForm from "./components/AddBugForm";
 import './styles/main.css';
 import { useState } from 'react';
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:3000/api/"
+axios.defaults.withCredentials = true;
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+
 const App = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
