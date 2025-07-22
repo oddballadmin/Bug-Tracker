@@ -15,3 +15,18 @@ export const signUp = async (userData: {
     throw error;
   }
 }
+
+export const login = async (creds: {
+  email: string;
+  password: string;
+}) => {
+  try {
+    const response = await axios.post(`users/login/`, creds, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error during login:", error);
+    throw error;
+  }
+}
