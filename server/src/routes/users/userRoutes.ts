@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import {createUser, signIn} from '../../controllers/userController';
+import {createUser, getUserByID, signIn} from '../../controllers/userController';
 
 const router = express.Router();
 router.use(cors({
@@ -13,5 +13,6 @@ router.use(cors({
 
 router.post('/create', createUser);
 router.post('/login', signIn);
+router.get('/id/:id', getUserByID);
 
 export default router;

@@ -7,7 +7,9 @@ export const setCookieAuth = ({username, email, id}: UserType) => {
             id,
             username,
             email,
-            loggedIn: true
+            loggedIn: true,
+            role: "user", 
+            num_bugs_reported: 0
         },
         options: {
             maxAge: 24 * 60 * 60 * 1000, // 1 day
