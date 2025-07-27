@@ -6,10 +6,13 @@ export const LoginPopup = ({ isOpen }: { isOpen: boolean }) => {
         username: "",
         password: ""
     });
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         try {
             const response = await login(formData);
+
             console.log("Login successful:", response);
             // Handle successful login (e.g., close popup, show success message)
         } catch (error) {
@@ -20,10 +23,10 @@ export const LoginPopup = ({ isOpen }: { isOpen: boolean }) => {
 
     if (!isOpen) return null;
     return (
-        <div className="signup-form">
+        <div className="login-form">
             <form >
                 <h2>Login</h2>
-                
+
                 <label>
                     Username:
                     <input type="text" name="username" required value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} />

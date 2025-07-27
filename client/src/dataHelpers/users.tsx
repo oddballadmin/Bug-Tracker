@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export const signUp = async (userData: {
   username: string;
     email: string;
@@ -21,6 +20,8 @@ export const login = async (creds: {
   password: string;
 }) => {
   try {
+    document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    console.log("Cleared auth cookie before login");
     const response = await axios.post(`users/login/`, creds, {
       withCredentials: true,
     });

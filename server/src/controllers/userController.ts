@@ -50,8 +50,7 @@ export const signIn = async (
 		const cookieData = setCookieAuth({ username: user.username, email: user.email, id: user.id, role: user.role, num_bugs_reported: user.num_bugs_reported });
 		res.cookie(
 			"auth",
-			JSON.stringify(cookieData.user),
-			{ ...cookieData.options, sameSite: "lax" }
+			cookieData.user
 		);
 
 		return res.status(200).json({ message: "Login successful", userId: user.id });

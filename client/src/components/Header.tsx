@@ -21,7 +21,7 @@ function Header() {
 const styles = {
     header: {
         // backgroundColor: '#282c34',
-        backgroundColor: 'rgba(28, 39, 63, 1)',
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
         color: 'white',
         justifyContent: 'space-around',
         width: '100%',
